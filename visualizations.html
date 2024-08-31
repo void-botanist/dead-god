@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <link href="css/dead_god.css" type="text/css" rel="stylesheet">
+
+    <title>Visualizations | Dead God</title>
+    <link rel="icon" type="image/x-icon" href="https://static.wikia.nocookie.net/bindingofisaacre_gamepedia/images/e/e0/Achievement_Death_Certificate_icon.png">
+</head>
+
+<body>
+    <header class="flex-center-column">
+        <span>Dead God</span>
+        <span id="subtitle">&bull; Visualizing Achievements in The Binding of Isaac: Rebirth &bull;</span>
+        <nav>
+            <ul class="flex-center">
+                <li id="intro-link"><a href="index.html"><img src="images/intro note text.png" alt="Intro" /></a></li>
+                <li id="viz-link"><a href="visualizations.html"><img src="images/viz note text.png" alt="Visualizations" /></a></li>
+                <li id="source-link"><a href="sources.html"><img src="images/source note text.png" alt="Sources" /></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Note</h2>
+    <p>Because Afterbirth+ and its fifth booster pack both added achievements to the game but were released over a year apart, they are charted separately in these visualizations.</p>
+    <h2>DLC Releases</h2>
+    <p>This chart tracks the release dates for each DLC, and how long each had been available as of April 12, 2023 (when I pulled the achievement percentage data from Steam).</p>
+    <div class="flex-center canvas-row">
+        <canvas id="release-chart"></canvas>
+    </div>
+    <p>There's obviously a big difference between the first four releases and Repentance, which is also reflected in the spread of rare achievements.</p>
+
+    <h2>Rarity Distribution by DLC</h2>
+    <p>Click a DLC in the legend to highlight its data. Click outside the legend to reset.</p>
+    <div id="vega"></div>
+
+    <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/void-botanist/dead-god/main/vega-lite/embed.json";
+        vegaEmbed('#vega', spec);
+    </script>
+
+    <script>
+        const colors = ['#df9e4c', '#5a6d8d', '#a659c5', '#81419b', '#bc4841'];
+        const desat = ['#df9e4c', '#5a6d8d', '#9255aa', '', ''];
+        const dcp1 = ['#f5ad53', '#46556e', '#bf6d8f', '#720E1A', '#1BA1DA'];
+        const dcp = ['#f5ad53', '#2f3a5c', '#724b78', '#b65b7b', '#762F2F'];
+        //#9e6001
+        Chart.register(ChartDataLabels);
+        const chart = document.getElementById('release-chart');
+        chart.style.height = '50vh';
+        const endDate = new Date('2023-04-12');
+        const rebirthDate = new Date('2014-11-04');
+        const abDate = new Date('2015-10-30');
+        const abPlusDate = new Date('2017-01-03');
+        const boosterDate = new Date('2018-04-30');
+        const repentanceDate = new Date('2021-03-31');
+        var releases = [rebirthDate, abDate, abPlusDate, boosterDate, repentanceDate];
+        var time = [];
+        var day = 1000 * 60 * 60 * 24
+
+        releases.forEach(date => {
+            var available = endDate - date;
+            available = Math.round(((available / day) / 365) * 100) / 100;
+            time.push(available);
+        });
+
+        const fullOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        const yearOptions = { year: 'numeric' };
+
+        Chart.defaults.font.size = 16;
+        new Chart(chart, {
+            type: 'bar',
+            data: {
+                labels: ['Rebirth', 'Afterbirth', 'Afterbirth+', 'Booster Pack 5', 'Repentance'],
+                color: 'black',
+                datasets: [{
+                    data: [[rebirthDate, endDate], [abDate, endDate], [abPlusDate, endDate], [boosterDate, endDate], [repentanceDate, endDate]],
+                    borderWidth: 1,
+                    backgroundColor: dcp
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false
+                    },
+                    datalabels: {
+                        labels: {
+
+                            title: {
+                                backgroundColor: '#eee1d9',
+                                padding: {
+                                    top: 6,
+                                    bottom: 6
+                                },
+                                formatter: function (value, context) {
+                                    return releases[context.dataIndex].toLocaleDateString('us-EN', fullOptions);
+                                },
+                                color: 'black',
+                                font: {
+                                    // weight: 'bold'
+                                },
+                                anchor: 'start',
+                                align: 'start'
+
+                            },
+                            timelength: {
+                                anchor: 'start',
+                                align: 'end',
+                                color: ['black', 'white', 'white', 'white', 'white'],
+                                formatter: function (value, context) {
+                                    return time[context.dataIndex] + " years";
+                                },
+                                font: {
+                                    weight: 'bold'
+                                }
+                            }
+                        }
+                    }
+                },
+
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'year'
+                        },
+                        min: Date.parse('2013-07-01'),
+                        max: endDate,
+                        grid: {
+                            color: 'black',
+                            borderColor: 'black',
+                            borderWidth: 2
+                        },
+                        title: {
+                            display: false
+                        },
+                        ticks: {
+                            callback: function (value, index, ticks) {
+                                value = new Date(value);
+                                value.setFullYear(value.getFullYear() + 1); // to correct wrong year showing vs. data
+                                if (value.getFullYear() != 2013) {
+                                    return value.toLocaleDateString('us-EN', yearOptions);
+                                } else {
+                                    return '';
+                                }
+
+                            },
+                            labels: time,
+                            color: 'black'
+                        },
+                        grid: {
+                            color: '#cbb9ad',
+                            borderColor: 'black',
+
+                        }
+                    },
+                    y: {
+                        position: 'right',
+                        grid: {
+                            display: false,
+                            borderColor: 'black',
+
+                        },
+                        title: {
+                            display: false,
+                        },
+                        ticks: {
+                            color: 'black'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <p>This suggests that the longer a DLC has been available, the higher the number of players who will have a given achievement.</p>
+    <p>More directly, we can see how many rare achievements there are per DLC.</p>
+    <h2>Achievements by DLC</h2>
+    <div class="flex-top">
+        <div class="flex-center-column row-all-container">
+            <h3>Rebirth</h3>
+            <p>Rare: 2/178</p>
+            <div id="rebirth-row-all" class="flex-left row-all rebirth"></div>
+        </div>
+        <div class="flex-center-column row-all-container">
+            <h3>Afterbirth</h3>
+            <p>Rare: 1/98</p>
+            <div id="ab-row-all" class="flex-left row-all ab"></div>
+        </div>
+        <div class="flex-center-column row-all-container">
+            <h3>Afterbirth+</h3>
+            <p>Rare: 6/63</p>
+            <div id="abp-row-all" class="flex-left row-all abp"></div>
+        </div>
+        <div class="flex-center-column row-all-container">
+            <h3>Booster Pack 5</h3>
+            <p>Rare: 4/64</p>
+            <div id="booster-row-all" class="flex-left row-all booster"></div>
+        </div>
+        <div class="flex-center-column row-all-container">
+            <h3>Repentance</h3>
+            <p>Rare: 184/234</p>
+            <div id="repentance-row-all" class="flex-left row-all rep"></div>
+        </div>
+    </div>
+
+    <script>
+        var rebRowAll = document.getElementById('rebirth-row-all');
+        var abRowAll = document.getElementById('ab-row-all');
+        var abPlusRowAll = document.getElementById('abp-row-all');
+        var boosterRowAll = document.getElementById('booster-row-all');
+        var repRowAll = document.getElementById('repentance-row-all');
+
+        const achievements = [{
+            dlc: "Rebirth",
+            ach: 178,
+            rareAch: 2,
+            row: rebRowAll
+        },
+        {
+            dlc: "Afterbirth",
+            ach: 98,
+            rareAch: 1,
+            row: abRowAll
+        },
+        {
+            dlc: "Afterbirth+",
+            ach: 63,
+            rareAch: 6,
+            row: abPlusRowAll
+        },
+        {
+            dlc: "Booster",
+            ach: 64,
+            rareAch: 4,
+            row: boosterRowAll
+        },
+        {
+            dlc: "Repentance",
+            ach: 234,
+            rareAch: 184,
+            row: repRowAll
+        }
+        ];
+
+
+        var row;
+        achievements.forEach(function (current, index, array) {
+            row = current.row;
+            for (let j = 0; j < current.ach; j++) {
+                if (j < current.rareAch) {
+                    row.innerHTML += "<div class='matrix-box rare-box'></div>";
+                } else {
+                    row.innerHTML += "<div class='matrix-box'></div>";
+                }
+            }
+        });
+    </script>
+
+
+    <h2>Rarest Achievements by DLC</h2>
+    <div id="rare-row" class="flex-row">
+        <div id="rebirth-rare" class="paper flex-space-column">
+            <h3>Rebirth</h3>
+            <img src="https://static.wikia.nocookie.net/bindingofisaacre_gamepedia/images/6/60/Achievement_The_Real_Platinum_God_icon.png/" />
+            <div>
+                <h4>The Real Platinum God</h4>
+                <p class="paper-p">Collect every non-DLC item, and unlock every secret and ending</p>
+            </div>
+            <p class="rare-percent paper-p">8.2%</p>
+            <p class="unlock paper-p">Unlocks: nothing (bragging rights)</p>
+        </div>
+        <div id="afterbirth-rare" class="paper flex-space-column">
+            <h3>Afterbirth</h3>
+            <img src="https://static.wikia.nocookie.net/bindingofisaacre_gamepedia/images/a/a5/Achievement_Mega_icon.png/" />
+            <div>
+                <h4>Mega</h4>
+                <p class="paper-p">Defeat Mega Satan as every character</p>
+            </div>
+            <p class="rare-percent paper-p">9.5%</p>
+            <p class="unlock paper-p">Unlocks: <a href="https://breezewiki.com/bindingofisaacrebirth/wiki/Mega_Blast">Mega Blast</a> (item)</p>
+
+        </div>
+        <div id="afterbirth+-rare" class="paper flex-space-column">
+            <h3>Afterbirth+</h3>
+            <img src="https://static.wikia.nocookie.net/bindingofisaacre_gamepedia/images/8/86/Achievement_The_Marathon_icon.png/" />
+            <div>
+                <h4>The Marathon</h4>
+                <p class="paper-p">Get a 5-win streak in the Daily Challenges</p>
+            </div>
+            <p class="rare-percent paper-p">5.8%</p>
+            <p class="unlock paper-p">Unlocks: <a href="https://breezewiki.com/bindingofisaacrebirth/wiki/Cracked_Crown">Cracked Crown</a> (trinket)</p>
+        </div>
+        <div id="booster-rare" class="paper flex-space-column">
+            <h3>Booster Pack 5</h3>
+            <img src="https://static.wikia.nocookie.net/bindingofisaacre_gamepedia/images/a/aa/Achievement_Broken_Modem_icon.png/" />
+            <div>
+                <h4>Broken Modem</h4>
+                <p class="paper-p">Complete 7 Daily Challenges</p>
+            </div>
+            <p class="rare-percent paper-p">5.7%</p>
+            <p class="unlock paper-p">Unlocks: <a href="https://breezewiki.com/bindingofisaacrebirth/wiki/Broken_Modem">Broken Modem</a> (item)</p>
+        </div>
+        <div id="repentance-rare" class="paper flex-space-column">
+            <h3>Repentance</h3>
+            <img src="https://static.wikia.nocookie.net/bindingofisaacre_gamepedia/images/9/97/Achievement_Dead_God_icon.png/" />
+            <div>
+                <h4>Dead God</h4>
+                <p class="paper-p">Unlock all the other achievements and collect every item in the game</p>
+            </div>
+            <p class="rare-percent paper-p">2.3%</p>
+            <p class="unlock paper-p">Unlocks: nothing (bragging rights)</p>
+        </div>
+    </div>
+
+    <h2>Why are these the rarest?</h2>
+    <div id="rare-row">
+        <div id="plat-god" class="explain-text">
+            <h3>The Real Platinum God</h3>
+            <p>Unlocking 177 other achievements (a.k.a. secrets, which lead to endings), plus picking up ("collecting") 341 items is no mean feat, not least because some of those items have to be unlocked first, and unlocking items makes the overall item pool the game chooses from much larger, reducing your chances of encountering any specific item. With any DLC installed and enabled, the DLC items will further dilute your chances. However, Afterbirth makes some of the required achievements
+                easier, namely the ones you can only get by playing as The Lost. The Lost has no health, so a single hit will kill him&mdash;but through an admittedly long and tedious process, Afterbirth allows you to unlock a shield for The Lost that refreshes every room, making this a somewhat easier achievement.</p>
+        </div>
+
+        <div class="flex-center">
+            <div class="explain-text flex-center-column">
+                <h3>Mega</h3>
+
+                <p>When this achievement was released, "every character" meant 13 characters. With Afterbirth+ enabled,<sup>†</sup> 2 more characters are added, and with Repentance enabled, a further 2 are added. So if you have all DLC enabled, you have to beat Mega Satan with 17 characters. Like The Lost, some of these characters are incredibly challenging to play. And unlike other bosses, Mega Satan is behind a door that requires an item to unlock, besides being in chapter 6 (roughly the 10th
+                    floor). While arguably not the hardest boss in the game, of the major bosses that have achievements for each character, he has the lowest average defeat rate. Still, the item this achievement unlocks is incredibly powerful.</p>
+                <p>The chart at right shows the achievements each character gets for defeating major bosses up to Mega Satan. It includes the 13 characters in Afterbirth and the average defeat rate for each boss (the line). Later chapters take longer to reach, which means both more opportunity to gain items and more time to die before reaching the boss. One achievement for ??? was omitted because it can be unlocked by beating ??? as Judas or beating Ultra Pride (an uncommon miniboss that can
+                    occur on any floor) with any character, and therefore its extremely high 59.6% achievement rate does not reflect ??? defeats.</p>
+
+
+                <p><sup>†</sup> <span class="italic">With Steam, you can purchase and install DLC without having it enabled, so it will not affect the game.</span></p>
+            </div>
+
+            <div id="boss"></div>
+
+            <script type="text/javascript">
+                var boss = "https://raw.githubusercontent.com/void-botanist/dead-god/main/vega-lite/bosschapter.json";
+                var opt = { "actions": false };
+                vegaEmbed('#boss', boss, opt);
+            </script>
+        </div>
+        <div class="flex-center">
+            <img class="explain-img" src="images/daily.png" alt="A screenshot of the daily run menu showing the character for the run." />
+            <div class="explain-text flex-center-column">
+                <h3>The Marathon</h3>
+                <p>Daily Challenges or daily runs are random seeded runs generated daily. Any player can play them, and their score shows up on a global leaderboard for the day. But the only thing you can see before starting the run (see screenshot) is which character you'll be playing&mdash;not the items you start with, or the major boss you'll have to beat. They also cannot be played if mods are enabled, no matter what kind of mods you have. While you can skip daily runs and keep your win
+                    streak (e.g. to only play runs with characters you're good at), a five-win streak is still difficult.</p>
+                <h3>Broken Modem</h3>
+                <p>This achievement is easier than The Marathon because it requires seven wins total, not a streak. I suspect that it's slightly rarer because the achievement was not retroactive. Broken Modem the item was unlocked by default when Booster Pack 1 added it to the game, but Booster Pack 5 added the achievement to unlock it. When BP 5 locked Broken Modem, it didn't consider any daily run wins before BP 5, so you would have to get the 7 wins again to reunlock Broken Modem. Some
+                    players
+                    probably didn't care enough about the item to play more dailies, or didn't realize they were missing Broken Modem from their possible items.</p>
+
+            </div>
+        </div>
+
+
+        <div id="dead-god" class="explain-text">
+            <h3>Dead God</h3>
+
+            <p>Not only has Repentance been out for only two years, but to get this achievement you have to complete 636 others AND pick up every item in the game at least once. It's literally the last achievement you can get. So it's not a surprise it's the rarest.</p>
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,600 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1000,
+    "height": 500,
+    "mark": {
+        "type": "line",
+        "point": true
+    },
+    "encoding": {
+        "x": {
+            "field": "character",
+            "title": "Character",
+            "type": "nominal",
+            "sort": ["Isaac", "Azazel", "Cain", "Judas", "Eden", "Maggie", "Samson", "???", "Lazarus", "Eve", "Lilith", "The Lost", "Keeper"],
+            "scale": {
+                
+            },
+            "axis": {
+                "titleFontSize": 16,
+                "labelFontSize": 14
+            }
+        },
+        "y": {
+            "field": "rarity",
+            "title": "% of players with the achievement",
+            "type": "quantitative",
+            "stack": false,
+            "axis": {
+                "titleFontSize": 16,
+                "labelFontSize": 14
+            }
+        },
+        "color": {
+            "field": "boss",
+            "scale": {
+
+            },
+            "legend": {
+                "labelFontSize": 16,
+                "title": "Boss",
+                "titleFontSize": 18
+            }
+        },
+        "shape": {
+            "field": "chapter", "type":"ordinal"
+        }
+    },
+    "config": {
+    },
+    "data": {
+        "values":[
+            {
+              "character": "???",
+              "boss": "???",
+              "rarity": 24.200000763,
+              "chapter": 6
+            },
+            {
+              "character": "Azazel",
+              "boss": "???",
+              "rarity": 29.299999237,
+              "chapter": 6
+            },
+            {
+              "character": "Cain",
+              "boss": "???",
+              "rarity": 26,
+              "chapter": 6
+            },
+            {
+              "character": "Eden",
+              "boss": "???",
+              "rarity": 25.200000763,
+              "chapter": 6
+            },
+            {
+              "character": "Eve",
+              "boss": "???",
+              "rarity": 23,
+              "chapter": 6
+            },
+            {
+              "character": "Isaac",
+              "boss": "???",
+              "rarity": 32.5,
+              "chapter": 6
+            },
+            {
+              "character": "Judas",
+              "boss": "???",
+              "rarity": 59.599998474,
+              "chapter": 6
+            },
+            {
+              "character": "Keeper",
+              "boss": "???",
+              "rarity": 13.600000381,
+              "chapter": 6
+            },
+            {
+              "character": "Lazarus",
+              "boss": "???",
+              "rarity": 23.100000381,
+              "chapter": 6
+            },
+            {
+              "character": "Lilith",
+              "boss": "???",
+              "rarity": 18.299999237,
+              "chapter": 6
+            },
+            {
+              "character": "Maggie",
+              "boss": "???",
+              "rarity": 24.600000381,
+              "chapter": 6
+            },
+            {
+              "character": "Samson",
+              "boss": "???",
+              "rarity": 23.5,
+              "chapter": 6
+            },
+            {
+              "character": "The Lost",
+              "boss": "???",
+              "rarity": 17.200000763,
+              "chapter": 6
+            },
+            {
+              "character": "???",
+              "boss": "Boss Rush",
+              "rarity": 21.600000381,
+              "chapter": 3
+            },
+            {
+              "character": "Azazel",
+              "boss": "Boss Rush",
+              "rarity": 41.599998474,
+              "chapter": 3
+            },
+            {
+              "character": "Cain",
+              "boss": "Boss Rush",
+              "rarity": 26.899999619,
+              "chapter": 3
+            },
+            {
+              "character": "Eden",
+              "boss": "Boss Rush",
+              "rarity": 25.399999619,
+              "chapter": 3
+            },
+            {
+              "character": "Eve",
+              "boss": "Boss Rush",
+              "rarity": 22.799999237,
+              "chapter": 3
+            },
+            {
+              "character": "Isaac",
+              "boss": "Boss Rush",
+              "rarity": 36.299999237,
+              "chapter": 3
+            },
+            {
+              "character": "Judas",
+              "boss": "Boss Rush",
+              "rarity": 27.299999237,
+              "chapter": 3
+            },
+            {
+              "character": "Keeper",
+              "boss": "Boss Rush",
+              "rarity": 12.899999619,
+              "chapter": 3
+            },
+            {
+              "character": "Lazarus",
+              "boss": "Boss Rush",
+              "rarity": 22.600000381,
+              "chapter": 3
+            },
+            {
+              "character": "Lilith",
+              "boss": "Boss Rush",
+              "rarity": 18,
+              "chapter": 3
+            },
+            {
+              "character": "Maggie",
+              "boss": "Boss Rush",
+              "rarity": 24.200000763,
+              "chapter": 3
+            },
+            {
+              "character": "Samson",
+              "boss": "Boss Rush",
+              "rarity": 24.700000763,
+              "chapter": 3
+            },
+            {
+              "character": "The Lost",
+              "boss": "Boss Rush",
+              "rarity": 15.899999619,
+              "chapter": 3
+            },
+            {
+              "character": "???",
+              "boss": "Hush",
+              "rarity": 18.100000381,
+              "chapter": 4.5
+            },
+            {
+              "character": "Azazel",
+              "boss": "Hush",
+              "rarity": 26.100000381,
+              "chapter": 4.5
+            },
+            {
+              "character": "Cain",
+              "boss": "Hush",
+              "rarity": 20.700000763,
+              "chapter": 4.5
+            },
+            {
+              "character": "Eden",
+              "boss": "Hush",
+              "rarity": 19.899999619,
+              "chapter": 4.5
+            },
+            {
+              "character": "Eve",
+              "boss": "Hush",
+              "rarity": 17.5,
+              "chapter": 4.5
+            },
+            {
+              "character": "Isaac",
+              "boss": "Hush",
+              "rarity": 27.799999237,
+              "chapter": 4.5
+            },
+            {
+              "character": "Judas",
+              "boss": "Hush",
+              "rarity": 21.200000763,
+              "chapter": 4.5
+            },
+            {
+              "character": "Keeper",
+              "boss": "Hush",
+              "rarity": 12.699999809,
+              "chapter": 4.5
+            },
+            {
+              "character": "Lazarus",
+              "boss": "Hush",
+              "rarity": 17.399999619,
+              "chapter": 4.5
+            },
+            {
+              "character": "Lilith",
+              "boss": "Hush",
+              "rarity": 16.700000763,
+              "chapter": 4.5
+            },
+            {
+              "character": "Maggie",
+              "boss": "Hush",
+              "rarity": 18.799999237,
+              "chapter": 4.5
+            },
+            {
+              "character": "Samson",
+              "boss": "Hush",
+              "rarity": 18,
+              "chapter": 4.5
+            },
+            {
+              "character": "The Lost",
+              "boss": "Hush",
+              "rarity": 15,
+              "chapter": 4.5
+            },
+            {
+              "character": "???",
+              "boss": "Isaac",
+              "rarity": 34.700000763,
+              "chapter": 5
+            },
+            {
+              "character": "Azazel",
+              "boss": "Isaac",
+              "rarity": 37.099998474,
+              "chapter": 5
+            },
+            {
+              "character": "Cain",
+              "boss": "Isaac",
+              "rarity": 31.100000381,
+              "chapter": 5
+            },
+            {
+              "character": "Eden",
+              "boss": "Isaac",
+              "rarity": 29.799999237,
+              "chapter": 5
+            },
+            {
+              "character": "Eve",
+              "boss": "Isaac",
+              "rarity": 26,
+              "chapter": 5
+            },
+            {
+              "character": "Isaac",
+              "boss": "Isaac",
+              "rarity": 38.700000763,
+              "chapter": 5
+            },
+            {
+              "character": "Judas",
+              "boss": "Isaac",
+              "rarity": 30.799999237,
+              "chapter": 5
+            },
+            {
+              "character": "Keeper",
+              "boss": "Isaac",
+              "rarity": 14.199999809,
+              "chapter": 5
+            },
+            {
+              "character": "Lazarus",
+              "boss": "Isaac",
+              "rarity": 26.899999619,
+              "chapter": 5
+            },
+            {
+              "character": "Lilith",
+              "boss": "Isaac",
+              "rarity": 20.700000763,
+              "chapter": 5
+            },
+            {
+              "character": "Maggie",
+              "boss": "Isaac",
+              "rarity": 28.799999237,
+              "chapter": 5
+            },
+            {
+              "character": "Samson",
+              "boss": "Isaac",
+              "rarity": 28,
+              "chapter": 5
+            },
+            {
+              "character": "The Lost",
+              "boss": "Isaac",
+              "rarity": 17.700000763,
+              "chapter": 5
+            },
+            {
+              "character": "???",
+              "boss": "Mega Satan",
+              "rarity": 16.399999619,
+              "chapter": 6
+            },
+            {
+              "character": "Azazel",
+              "boss": "Mega Satan",
+              "rarity": 21.600000381,
+              "chapter": 6
+            },
+            {
+              "character": "Cain",
+              "boss": "Mega Satan",
+              "rarity": 19.100000381,
+              "chapter": 6
+            },
+            {
+              "character": "Eden",
+              "boss": "Mega Satan",
+              "rarity": 18.100000381,
+              "chapter": 6
+            },
+            {
+              "character": "Eve",
+              "boss": "Mega Satan",
+              "rarity": 15.699999809,
+              "chapter": 6
+            },
+            {
+              "character": "Isaac",
+              "boss": "Mega Satan",
+              "rarity": 25.200000763,
+              "chapter": 6
+            },
+            {
+              "character": "Judas",
+              "boss": "Mega Satan",
+              "rarity": 18.899999619,
+              "chapter": 6
+            },
+            {
+              "character": "Keeper",
+              "boss": "Mega Satan",
+              "rarity": 12.600000381,
+              "chapter": 6
+            },
+            {
+              "character": "Lazarus",
+              "boss": "Mega Satan",
+              "rarity": 16.100000381,
+              "chapter": 6
+            },
+            {
+              "character": "Lilith",
+              "boss": "Mega Satan",
+              "rarity": 15.199999809,
+              "chapter": 6
+            },
+            {
+              "character": "Maggie",
+              "boss": "Mega Satan",
+              "rarity": 18,
+              "chapter": 6
+            },
+            {
+              "character": "Samson",
+              "boss": "Mega Satan",
+              "rarity": 16.5,
+              "chapter": 6
+            },
+            {
+              "character": "The Lost",
+              "boss": "Mega Satan",
+              "rarity": 14.100000381,
+              "chapter": 6
+            },
+            {
+              "character": "???",
+              "boss": "Satan",
+              "rarity": 23.600000381,
+              "chapter": 5
+            },
+            {
+              "character": "Azazel",
+              "boss": "Satan",
+              "rarity": 40.400001526,
+              "chapter": 5
+            },
+            {
+              "character": "Cain",
+              "boss": "Satan",
+              "rarity": 31.399999619,
+              "chapter": 5
+            },
+            {
+              "character": "Eden",
+              "boss": "Satan",
+              "rarity": 28.200000763,
+              "chapter": 5
+            },
+            {
+              "character": "Eve",
+              "boss": "Satan",
+              "rarity": 25.200000763,
+              "chapter": 5
+            },
+            {
+              "character": "Isaac",
+              "boss": "Satan",
+              "rarity": 41.5,
+              "chapter": 5
+            },
+            {
+              "character": "Judas",
+              "boss": "Satan",
+              "rarity": 30.600000381,
+              "chapter": 5
+            },
+            {
+              "character": "Keeper",
+              "boss": "Satan",
+              "rarity": 13.100000381,
+              "chapter": 5
+            },
+            {
+              "character": "Lazarus",
+              "boss": "Satan",
+              "rarity": 26.200000763,
+              "chapter": 5
+            },
+            {
+              "character": "Lilith",
+              "boss": "Satan",
+              "rarity": 19.100000381,
+              "chapter": 5
+            },
+            {
+              "character": "Maggie",
+              "boss": "Satan",
+              "rarity": 28.100000381,
+              "chapter": 5
+            },
+            {
+              "character": "Samson",
+              "boss": "Satan",
+              "rarity": 27,
+              "chapter": 5
+            },
+            {
+              "character": "The Lost",
+              "boss": "Satan",
+              "rarity": 17.100000381,
+              "chapter": 5
+            },
+            {
+              "character": "???",
+              "boss": "The Lamb",
+              "rarity": 20.200000763,
+              "chapter": 6
+            },
+            {
+              "character": "Azazel",
+              "boss": "The Lamb",
+              "rarity": 28.899999619,
+              "chapter": 6
+            },
+            {
+              "character": "Cain",
+              "boss": "The Lamb",
+              "rarity": 24.200000763,
+              "chapter": 6
+            },
+            {
+              "character": "Eden",
+              "boss": "The Lamb",
+              "rarity": 22.799999237,
+              "chapter": 6
+            },
+            {
+              "character": "Eve",
+              "boss": "The Lamb",
+              "rarity": 20.799999237,
+              "chapter": 6
+            },
+            {
+              "character": "Isaac",
+              "boss": "The Lamb",
+              "rarity": 32.5,
+              "chapter": 6
+            },
+            {
+              "character": "Judas",
+              "boss": "The Lamb",
+              "rarity": 24.100000381,
+              "chapter": 6
+            },
+            {
+              "character": "Keeper",
+              "boss": "The Lamb",
+              "rarity": 12.600000381,
+              "chapter": 6
+            },
+            {
+              "character": "Lazarus",
+              "boss": "The Lamb",
+              "rarity": 20.899999619,
+              "chapter": 6
+            },
+            {
+              "character": "Lilith",
+              "boss": "The Lamb",
+              "rarity": 16.700000763,
+              "chapter": 6
+            },
+            {
+              "character": "Maggie",
+              "boss": "The Lamb",
+              "rarity": 22.899999619,
+              "chapter": 6
+            },
+            {
+              "character": "Samson",
+              "boss": "The Lamb",
+              "rarity": 21.5,
+              "chapter": 6
+            },
+            {
+              "character": "The Lost",
+              "boss": "The Lamb",
+              "rarity": 16.600000381,
+              "chapter": 6
+            }
+           ]
+}
+}

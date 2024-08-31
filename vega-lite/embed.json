@@ -1,0 +1,2637 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1000,
+  "height": 500,
+  "background": "#eee1d9",
+  "transform": [
+    {
+      "density": "percent",
+      "bandwidth": 0.6,
+      "groupby": ["dlc"],
+      "counts": true,
+      "extent": [0, 100]
+    }
+  ],
+  "params": [
+    {
+      "name": "dlcSets",
+      "select": {
+        "type": "point",
+        "fields": ["dlc"]
+      },
+      "bind": "legend"
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "interpolate": "cardinal"
+  },
+  "encoding": {
+    "x": {
+      "field": "value",
+      "title": "% of players with the achievement",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 100]
+      },
+      "axis": {
+        "gridColor": "#cbb9ad",
+        "titleFontSize": 16,
+        "labelFontSize": 14,
+        "titleFont": "'Atkinson Hyperlegible', sans-serif",
+        "labelFont": "'Atkinson Hyperlegible', sans-serif"
+      }
+    },
+    "y": {
+      "field": "density",
+      "title": "Number of achievements",
+      "type": "quantitative",
+      "stack": false,
+      "axis": {
+        "gridColor": "#cbb9ad",
+        "titleFontSize": 16,
+        "labelFontSize": 14,
+        "titleFont": "'Atkinson Hyperlegible', sans-serif",
+        "labelFont": "'Atkinson Hyperlegible', sans-serif"
+      }
+    },
+    "color": {
+      "field": "dlc",
+      "scale": {
+        "range": ["rgba(47, 58, 91, 0.7)", "rgba(113, 75, 119, 0.7)", "rgba(182, 93, 124, 0.7)", "rgba(245, 171, 81, 0.7)", "rgba(117, 47, 47, 0.7)"]
+      },
+      "legend": {
+        "labelFontSize": 16,
+        "title": "DLC",
+        "titleFontSize": 18,
+        "values": ["Rebirth", "Afterbirth", "Afterbirth+", "Booster Pack 5", "Repentance"],
+        "titleFont": "'Atkinson Hyperlegible', sans-serif",
+        "labelFont": "'Atkinson Hyperlegible', sans-serif"
+      }
+    },
+    "opacity": {
+      "condition": {
+        "param": "dlcSets",
+        "value": 1
+      },
+      "value": 0.2
+    }
+  },
+  "config": {
+    "axisX": {
+      "minExtent": 0
+    }
+  },
+  "data": {
+    "values": [
+      {
+        "dlc": "Rebirth",
+        "percent": 65
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 64
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 50.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 69.6999969482422
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 69.6999969482422
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 69.6999969482422
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 65
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 53.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 41.5999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 46.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 45.5999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 40
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 85.1999969482422
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 76
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 53.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 50
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 44.7999992370606
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 45.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 22.1000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 28.7999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 31.1000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 60.7999992370606
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 40
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 44.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 40.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 51.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 42.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 61.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 34.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 39.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 56.7999992370606
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 44.7999992370606
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 50
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 44
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 52.7999992370606
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 47.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 53.2999992370606
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 36.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 33.0999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 36.2999992370606
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 34
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 62
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 41.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 25.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 28.1000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 31.3999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 28.8999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 23.6000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 32.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 24.6000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 24.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 24.1000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 23
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 28
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 23.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 27
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 37.9000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 38.5999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 21.3999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 18.2999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 52.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 20
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 23.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 28.2999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 48.5999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 43.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 54.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 32.2999992370606
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 9.39999961853027
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 36.2999992370606
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 22.8999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 30.6000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 20.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 21.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 26
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 26
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 59.5999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 37.9000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 65.5999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 74
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 60.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 24.1000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 29.7999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 8.19999980926514
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 76.0999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 60.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 60.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 53.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 32
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 33.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 27.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 21.8999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 28.8999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 21.7999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 18.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 21.1000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 26.6000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 23.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 18
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 21.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 29.1000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 32.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 25.6000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 24.3999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 22.6000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 38.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 30.7999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 27.2999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 24.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 26.8999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 20.7999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 22.7999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 24.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 21.6000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 24.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 26.8999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 26.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 23.1000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 20.8999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 19.6000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 29.7999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 28.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 25.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 22.7999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 25.3999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 37.0999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 40.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 29.2999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 17.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 17.1000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 17.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 16.6000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 15.8999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 69.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 56.2999992370606
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 44.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 31.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 20.3999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 51.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 48.5999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 47.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 55.9000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 53.5999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 32.9000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 76.1999969482422
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 61.9000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 38.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 33.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 32.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 56.0999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 64.0999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 49.2999992370606
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 41.0999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 26.2999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 40.0999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 13.3999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 38
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 65
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 53.5
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 44.0999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 48.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 45.7000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 65
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 20.2999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 37.0999984741211
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 69.6999969482422
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 37.4000015258789
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 28.6000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 25.8999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 29.3999996185303
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 30.2999992370605
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 35.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 32.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 26.6000003814697
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 18.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 28.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 27.2000007629395
+      },
+      {
+        "dlc": "Rebirth",
+        "percent": 43.0999984741211
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 27.7999992370605
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 18.7999992370605
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 20.7000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 21.2000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 18.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 17.5
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 18
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 26.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 17.3999996185303
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 19.8999996185303
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 15
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 16.7000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 12.6999998092651
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 30.8999996185303
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 23.6000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 26
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 25.7999992370605
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 19.6000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 21.5
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 23.6000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 37.2999992370606
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 21.3999996185303
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 23
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 14.5
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 26
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 13.5
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 25.2000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 18
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 19.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 18.8999996185303
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 16.3999996185303
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 15.6999998092651
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 16.5
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 21.6000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 16.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 18.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 14.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 15.1999998092651
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 12.6000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 20.7000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 18.2999992370605
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 19.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 16.7000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 18
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 21.2000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 19.7999992370605
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 13.6999998092651
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 17.8999996185303
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 13.6000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 16.6000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 14.8999996185303
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 11.6999998092651
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 16.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 13.8000001907349
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 17.5
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 40.2000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 16.5
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 14.1999998092651
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 13.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 13.6000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 12.6000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 12.8999996185303
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 14.3000001907349
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 36.7000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 34
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 32
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 30.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 28.2999992370605
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 25.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 22.5
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 20.7000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 19.7000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 18.7000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 11.3000001907349
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 16.2999992370605
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 12.6000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 11.5
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 12.3999996185303
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 11.1999998092651
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 12.5
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 14.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 11
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 13.1000003814697
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 11.6999998092651
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 13
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 10
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 54.7999992370606
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 54.7999992370606
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 39.7000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 29.2999992370605
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 54.7999992370606
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 32.5999984741211
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 35.0999984741211
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 54.7999992370606
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 52.0999984741211
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 54.7999992370606
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 18.7000007629395
+      },
+      {
+        "dlc": "Afterbirth",
+        "percent": 9.5
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 30.7000007629395
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 46.7000007629395
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 35.5
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 29.7999992370605
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 31.6000003814697
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 22.2000007629395
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 15.3000001907349
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 16.2999992370605
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 16.2999992370605
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 13.8000001907349
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 13.8999996185303
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 13.5
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 15.5
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 18.3999996185303
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 13.8999996185303
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 12.8999996185303
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 12.5
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 10.6999998092651
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 13.6999998092651
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 17.1000003814697
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 13.6999998092651
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 14.5
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 14.8000001907349
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 12
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 13
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 12.5
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 13.5
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 14.8999996185303
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 12.1999998092651
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 14.6000003814697
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 12
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 11.6000003814697
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 11.8999996185303
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 18.5
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 16.6000003814697
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 17
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 15.1999998092651
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 15
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 14.3999996185303
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 15.6000003814697
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 14.1999998092651
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 18.7000007629395
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 9.30000019073486
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 29.8999996185303
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 16.3999996185303
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 22.2999992370605
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 14.6000003814697
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 18.8999996185303
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 6.09999990463257
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 12.3999996185303
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 6.69999980926514
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 32.2999992370606
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 18.7999992370605
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 25.6000003814697
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 14.6999998092651
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 14.8000001907349
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 12.3000001907349
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 9.5
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 16.2999992370605
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 5.80000019073486
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 10.8000001907349
+      },
+      {
+        "dlc": "Afterbirth+",
+        "percent": 27.2999992370605
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 9.80000019073486
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 27.6000003814697
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 21.2000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 34.7000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 32.9000015258789
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 31.2000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 28.5
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 26
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 22.1000003814697
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 31.2999992370605
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 25.6000003814697
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 43.2999992370606
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 38.7000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 29.8999996185303
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 32.5999984741211
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 5.69999980926514
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 39.7000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 26
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 27.1000003814697
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 34.7000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 32.5
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 12.8000001907349
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 10.1000003814697
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 41.5
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 18.1000003814697
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 38.5999984741211
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 30.2000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 7.59999990463257
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 25.7000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 27.7999992370605
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 24.3999996185303
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 30
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 39.9000015258789
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 33.7000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 29.2999992370605
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 30
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 37.4000015258789
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 39.2000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 25.2999992370605
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 21.2000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 34.7000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 30.8999996185303
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 32.2000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 20.8999996185303
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 35.2999992370606
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 21.8999996185303
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 13.3000001907349
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 7.90000009536743
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 30
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 35.2000007629395
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 25
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 17.8999996185303
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 17.7999992370605
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 14.3999996185303
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 14.3999996185303
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 13.3000001907349
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 13.6000003814697
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 12.6000003814697
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 12.8999996185303
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 12.3999996185303
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 12.8000001907349
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 10.3999996185303
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 11.5
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 8.5
+      },
+      {
+        "dlc": "Booster Pack 5",
+        "percent": 12.1000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 20.3999996185303
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 17.2000007629395
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 21.2999992370605
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 21.7999992370605
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 13.8000001907349
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 22.1000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 13.6000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 18
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 18.7000007629395
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 17.1000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 17
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 16.3999996185303
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 15
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 13.8999996185303
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 12.3000001907349
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 11.8999996185303
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10.8999996185303
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 11.1000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 12.1000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10.3999996185303
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10.8000001907349
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.89999961853027
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.39999961853027
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 13.1999998092651
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 13.1999998092651
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.89999961853027
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10.8000001907349
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.60000038146973
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.60000038146973
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.89999961853027
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 11.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10.8000001907349
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.39999961853027
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.60000038146973
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.60000038146973
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.60000038146973
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.10000038146973
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.10000038146973
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 8.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 14.1000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 11.1000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 12.6000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 12.1999998092651
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 12.8000001907349
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.39999961853027
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 11.1000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10.6000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.60000038146973
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10.1999998092651
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.29999995231628
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.29999995231628
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 17.6000003814697
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 10.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 17.2999992370605
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 17.2999992370605
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 12.6999998092651
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 11.1999998092651
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 14.6999998092651
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 9.39999961853027
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.70000004768372
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 11.1999998092651
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 17.7999992370605
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.29999995231628
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.20000004768372
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.79999995231628
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.29999995231628
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.20000004768372
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 25.8999996185303
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 17.7999992370605
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.70000004768372
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 7.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.79999995231628
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.59999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.80000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.90000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.70000004768372
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.19999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.29999995231628
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.09999990463257
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 6.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.40000009536743
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 4.69999980926514
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 5.30000019073486
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 3.5
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 17.2000007629395
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 2.70000004768372
+      },
+      {
+        "dlc": "Repentance",
+        "percent": 2.29999995231628
+      }
+    ]
+  }
+}
